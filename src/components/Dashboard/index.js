@@ -66,9 +66,6 @@ function Dashboard(props) {
         <Typography component="h1" variant="h5">
           Hello {firebase.getCurrentUsername()}
         </Typography>
-        <Typography component="h1" variant="h5">
-          Your quote: {quote ? `"${quote}"` : <CircularProgress size={20} />}
-        </Typography>
         <Button
           type="submit"
           fullWidth
