@@ -9,7 +9,22 @@ import { CssBaseline, CircularProgress } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from "../Fire";
 
-const theme = createMuiTheme();
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#4dabf5",
+      main: "#2196f3",
+      dark: "#1769aa",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#33bfff",
+      main: "#00b0ff",
+      dark: "#007bb2",
+      contrastText: "#fff",
+    },
+  },
+});
 
 export default function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);

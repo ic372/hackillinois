@@ -1,11 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  Typography,
-  Paper,
-  Avatar,
-  CircularProgress,
-  Button,
-} from "@material-ui/core";
+import React from "react";
+import { Typography, Paper, Avatar, Button } from "@material-ui/core";
 import VerifiedUserOutlined from "@material-ui/icons/VerifiedUserOutlined";
 import withStyles from "@material-ui/core/styles/withStyles";
 import firebase from "../Fire";
@@ -43,12 +37,6 @@ const styles = (theme) => ({
 
 function Dashboard(props) {
   const { classes } = props;
-
-  const [quote, setQuote] = useState("");
-
-  useEffect(() => {
-    firebase.getCurrentUserQuote().then(setQuote);
-  });
 
   if (!firebase.getCurrentUsername()) {
     // not logged in
