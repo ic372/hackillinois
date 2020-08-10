@@ -35,18 +35,6 @@ class Firebase {
     });
   }
 
-  addQuote(quote) {
-    if (!this.auth.currentUser) {
-      return alert("Not authorized");
-    }
-
-    return this.db
-      .doc(`users_codedamn_video/${this.auth.currentUser.uid}`)
-      .set({
-        quote,
-      });
-  }
-
   isInitialized() {
     return new Promise((resolve) => {
       this.auth.onAuthStateChanged(resolve);
@@ -55,13 +43,6 @@ class Firebase {
 
   getCurrentUsername() {
     return this.auth.currentUser && this.auth.currentUser.displayName;
-  }
-
-  async getCurrentUserQuote() {
-    const quote = await this.db
-      .doc(`users_codedamn_video/${this.auth.currentUser.uid}`)
-      .get();
-    return quote.get("quote");
   }
 }
 

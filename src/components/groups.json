@@ -1,0 +1,39 @@
+{
+  "group": [
+    {
+      "group_id": 1,
+      "subject": "Biology",
+      "title": "Intro to Biology",
+      "prof": "Mowshowitz",
+      "description": "Recommended as the introductory biology course for biology and related majors, and for premedical students. Fundamental principles of biochemistry, molecular biology, and genetics."
+    },
+    {
+      "group_id": 2,
+      "subject": "Mathematics",
+      "title": "Multivariable Calculus",
+      "prof": "Youngren",
+      "description": "Differential and integral calculus of multiple variables. Topics include partial differentiation; optimization of functions of several variables; line, area, volume, and surface integrals; vector functions and vector calculus; theorems of Green, Gauss, and Stokes; applications to selected problems in engineering and applied science."
+    },
+    {
+      "group_id": 3,
+      "subject": "English",
+      "title": "University Writing",
+      "prof": "Fisher",
+      "description": "University Writing helps undergraduates engage in the conversations that form our intellectual community. By reading and writing about scholarly and popular essays, students learn that writing is a process of continual refinement of ideas. Rather than approaching writing as an innate talent, this course teaches writing as a learned skill."
+    },
+    {
+      "group_id": 4,
+      "subject": "Computer Science",
+      "title": "Computer Science Theory",
+      "prof": "Malkin",
+      "description": "Regular languages: deterministic and non-deterministic finite automata, regular expressions. Context-free languages: context-free grammars, push-down automata. Turing machines, the Chomsky hierarchy, and the Church-Turing thesis. Introduction to Complexity Theory and NP-Completeness."
+    },
+    {
+      "group_id": 5,
+      "subject": "Computer Science",
+      "title": "Fundamentals of Computer Systems",
+      "prof": "Kim",
+      "description": "Fundamentals of computer organization and digital logic. Boolean algebra, Karnaugh maps, basic gates and components, flipflops and latches, counters and state machines, basics of combinational and sequential digital design. Assembly language, instruction sets, ALU’s, single-cycle and multi-cycle processor design, introduction to pipelined processors, caches, and virtual memory."
+    }
+  ]
+}

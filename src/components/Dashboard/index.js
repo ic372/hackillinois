@@ -1,12 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import { Button, Typography } from "@material-ui/core";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+/**can add an icon for app in nav bar later */
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import firebase from "../Fire";
 import { withRouter } from "react-router-dom";
+import groupsList from "../groups.json";
+import "./search.css";
+/**Need to move the logout button to a navbar later */
 
 const styles = (theme) => ({
   submit: {
@@ -14,155 +20,117 @@ const styles = (theme) => ({
   },
 });
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 1000,
-    marginTop: 15,
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+class Dashboard extends Component {
+  state = {
+    search: "",
+  };
 
-const SearchBarStyle = {
-  border: "solid",
-  borderRadius: "2px",
-  position: "relative",
-  left: "10vh",
-  height: "10vh",
-  width: "100vh",
-  marginTop: "5vh",
-  marginBottom: "10vh",
-};
+  renderGroup = (group) => {
+    const { search } = this.state;
 
-function Dashboard(props) {
-  const { classes } = props;
-  const cardClasses = useStyles();
+    if (
+      search !== "" &&
+      group.title.toLowerCase().indexOf(search.toLowerCase()) === -1
+    ) {
+      return null;
+    }
 
-  return (
-    <div>
-      <div className="searchBar">
-        <input
-          type="text"
-          placeholder="Enter item to be searched"
-          style={SearchBarStyle}
-          onChange={(e) => this.searchSpace(e)}
-        />
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: "100vh" }}
-      >
-        <Grid item xs={12}>
-          <Card className={cardClasses.root}>
-            <CardContent>
-              <Typography
-                className={cardClasses.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                Subject 1
-              </Typography>
-              <Typography variant="h5" component="h2">
-                Class name 1
-              </Typography>
-              <Typography className={cardClasses.pos} color="textSecondary">
-                Prof name 1
-              </Typography>
-              <Typography variant="body2" component="p">
-                Study group description
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small" variant="contained" color="primary">
-                Join Group
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item xs={12}>
-          <Card className={cardClasses.root}>
-            <CardContent>
-              <Typography
-                className={cardClasses.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                Subject 2
-              </Typography>
-              <Typography variant="h5" component="h2">
-                Class name 2
-              </Typography>
-              <Typography className={cardClasses.pos} color="textSecondary">
-                Prof name 2
-              </Typography>
-              <Typography variant="body2" component="p">
-                Study group description
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small" variant="contained" color="primary">
-                Join Group
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item xs={12}>
-          <Card className={cardClasses.root}>
-            <CardContent>
-              <Typography
-                className={cardClasses.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                Subject 3
-              </Typography>
-              <Typography variant="h5" component="h2">
-                Class name 3
-              </Typography>
-              <Typography className={cardClasses.pos} color="textSecondary">
-                Prof name 3
-              </Typography>
-              <Typography variant="body2" component="p">
-                Study group description
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small" variant="contained" color="primary">
-                Join Group
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Button
-          type="submit"
-          size="small"
-          variant="contained"
-          color="secondary"
-          onClick={logout}
-          className={classes.submit}
-        >
-          Logout
-        </Button>
+    return (
+      <Grid item xs={12} mx={15}>
+        <Card style={{ minWidth: 500, marginTop: 15 }}>
+          <CardContent>
+            <Typography
+              style={{ fontSize: 14 }}
+              color="textSecondary"
+              gutterBottom
+            >
+              {group.subject}
+            </Typography>
+            <Typography variant="h5" component="h2">
+              {group.title}
+            </Typography>
+            <Typography style={{ marginBottom: 12 }} color="textSecondary">
+              {group.prof}
+            </Typography>
+            <Typography variant="body2" component="p">
+              {group.description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" variant="contained" color="primary">
+              Join Group
+            </Button>
+          </CardActions>
+        </Card>
       </Grid>
-    </div>
-  );
+    );
+  };
 
-  async function logout() {
-    await firebase.logout();
-    props.history.push("/");
+  onchange = (e) => {
+    this.setState({ search: e.target.value });
+  };
+
+  render() {
+    return (
+      <div>
+        <div>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography variant="h6" className="Title">
+                Study Buddies
+              </Typography>
+              <Button
+                color="inherit"
+                style={{ marginLeft: 900 }}
+                onClick={toProfile}
+              >
+                Profile
+              </Button>
+              <Button
+                style={{ marginLeft: 10 }}
+                color="inherit"
+                onClick={logout}
+              >
+                Logout
+              </Button>
+            </Toolbar>
+          </AppBar>
+        </div>
+        <div className="container">
+          <Grid
+            container
+            spacing={2}
+            direction="column"
+            alignItems="center"
+            justify="center"
+            style={{ minHeight: "100vh" }}
+          >
+            <Grid item xs={12} mx="auto">
+              <input
+                type="text"
+                placeholder="Search Group"
+                onChange={this.onchange}
+              />
+              <button className="inputButton">Search</button>
+            </Grid>
+            <div className="row">
+              {groupsList.group.map((group) => {
+                return this.renderGroup(group);
+              })}
+            </div>
+          </Grid>
+        </div>
+      </div>
+    );
+
+    async function logout() {
+      await firebase.logout();
+      this.context.history.push("/"); /**need to fix */
+    }
+
+    async function toProfile() {
+      this.context.history.push("/profile");
+    }
   }
 }
 
