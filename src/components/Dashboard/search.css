@@ -1,4 +1,4 @@
-.container input {
+input {
   position: relative;
   padding: 0px 16px;
   border: none;
@@ -17,7 +17,7 @@
   -webkit-appearance: none;
 }
 
-.container .inputButton {
+.inputButton {
   position: relative;
   padding: 0px 16px;
   border: none;
