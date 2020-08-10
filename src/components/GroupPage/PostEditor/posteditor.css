@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.post-editor {
+  margin: 1em 20%;
+}
+
+div {
+  display: block;
+}
+
+.post-editor-button {
+  float: right;
+  margin-top: 1em;
+}
+
+@media (max-width: 900px) {
+  .post-editor {
+    margin: 0;
+  }
+
+  .post-body {
+    margin: 1em;
+  }
+}

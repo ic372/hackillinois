@@ -52,6 +52,7 @@ function Register(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [school, setSchool] = useState("");
 
   return (
     <main className={classes.main}>
@@ -75,6 +76,17 @@ function Register(props) {
               autoFocus
               value={name}
               onChange={(e) => setName(e.target.value)}
+            />
+          </FormControl>
+          <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="school">School</InputLabel>
+            <Input
+              id="school"
+              name="school"
+              autoComplete="off"
+              autoFocus
+              value={school}
+              onChange={(e) => setSchool(e.target.value)}
             />
           </FormControl>
           <FormControl margin="normal" required fullWidth>
@@ -127,7 +139,7 @@ function Register(props) {
 
   async function onRegister() {
     try {
-      await firebase.register(name, email, password);
+      await firebase.register(name, school, email, password);
       props.history.replace("/dashboard");
     } catch (error) {
       alert(error.message);

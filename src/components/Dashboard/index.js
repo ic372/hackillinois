@@ -29,11 +29,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 275,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
   title: {
     fontSize: 14,
   },
@@ -114,22 +109,31 @@ class Dashboard extends Component {
     return (
       <main className={classes.main}>
         <NavBar />
+        <div className="spacer">
+          <h2>Find your study buddies!</h2>
+        </div>
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search Group"
+            onChange={this.onchange}
+          />
+          <Button
+            size="small"
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Search
+          </Button>
+        </div>
         <Grid
           container
           spacing={2}
           direction="column"
           alignItems="center"
           justify="center"
-          style={{ minHeight: "100vh" }}
         >
-          <Grid item xs={12}>
-            <input
-              type="text"
-              placeholder="Search Group"
-              onChange={this.onchange}
-            />
-            <button className="inputButton">Search</button>
-          </Grid>
           {groupsList.group.map((group) => {
             return this.renderGroup(group);
           })}

@@ -1,6 +1,6 @@
 input {
   position: relative;
-  padding: 0px 16px;
+  padding: 5px 16px;
   border: none;
   border-radius: 4px;
   font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
@@ -17,11 +17,11 @@ input {
   -webkit-appearance: none;
 }
 
-.inputButton {
+.search .inputButton {
   position: relative;
   padding: 0px 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -30,4 +30,15 @@ input {
   transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out,
     0.1s padding ease-in-out;
   -webkit-appearance: none;
+}
+
+.spacer {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+  margin-bottom: 16px;
 }
