@@ -70,6 +70,15 @@ class Dashboard extends Component {
     this.setState({ search: e.target.value });
   };
 
+  logout = () => {
+    firebase.logout();
+    this.props.history.push("/"); /**need to fix */
+  };
+
+  toProfile = () => {
+    this.props.history.push("/profile");
+  };
+
   render() {
     return (
       <div>
@@ -82,14 +91,14 @@ class Dashboard extends Component {
               <Button
                 color="inherit"
                 style={{ marginLeft: 900 }}
-                onClick={toProfile}
+                onClick={this.toProfile}
               >
                 Profile
               </Button>
               <Button
                 style={{ marginLeft: 10 }}
                 color="inherit"
-                onClick={logout}
+                onClick={this.logout}
               >
                 Logout
               </Button>
@@ -122,15 +131,6 @@ class Dashboard extends Component {
         </div>
       </div>
     );
-
-    async function logout() {
-      await firebase.logout();
-      this.context.history.push("/"); /**need to fix */
-    }
-
-    async function toProfile() {
-      this.context.history.push("/profile");
-    }
   }
 }
 

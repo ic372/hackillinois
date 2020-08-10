@@ -8,7 +8,6 @@ const Profile = () => {
         <h2 className="text-2xl font-semibold">
           {firebase.getCurrentUsername()}
         </h2>
-        <h3 className="italic">faruq123@gmail.com</h3>
       </div>
     </div>
   );
