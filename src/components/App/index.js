@@ -6,7 +6,7 @@ import Register from "../Register";
 import Dashboard from "../Dashboard";
 import Profile from "../Profile";
 import GroupPage from "../GroupPage";
-import Calendar from "../Calendar";
+import Notes from "../Notes";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { CssBaseline, CircularProgress } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -49,7 +49,7 @@ export default function App() {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/group" component={GroupPage} />
-          <Route exact path="/calendar" component={Calendar} />
+          <Route exact path="/notes" component={Notes} />
         </Switch>
       </Router>
     </MuiThemeProvider>

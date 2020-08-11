@@ -40,7 +40,7 @@ class PostEditor extends Component {
               onChange={this.handlePostEditorInputChange}
             />
             <button
-              className="btn btn-success post-editor-button"
+              className="btn btn-primary post-editor-button"
               onClick={this.createPost}
             >
               Post

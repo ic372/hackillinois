@@ -19,8 +19,8 @@ function NavBar(props) {
     props.history.push("/dashboard");
   };
 
-  const toCalendar = () => {
-    props.history.push("/calendar");
+  const toNotes = () => {
+    props.history.push("/notes");
   };
 
   return (
@@ -32,17 +32,13 @@ function NavBar(props) {
           </Button>
           <Button
             color="inherit"
-            style={{ marginLeft: 800 }}
+            style={{ marginLeft: 830 }}
             onClick={toProfile}
           >
             Profile
           </Button>
-          <Button
-            style={{ marginLeft: 10 }}
-            color="inherit"
-            onClick={toCalendar}
-          >
-            Calendar
+          <Button style={{ marginLeft: 10 }} color="inherit" onClick={toNotes}>
+            Notes
           </Button>
           <Button style={{ marginLeft: 10 }} color="inherit" onClick={logout}>
             Logout

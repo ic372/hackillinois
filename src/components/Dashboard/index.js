@@ -92,7 +92,7 @@ class Dashboard extends Component {
               onClick={this.toGroupPage}
               className={classes.submit}
             >
-              Join Group
+              View Group
             </Button>
           </CardActions>
         </Card>

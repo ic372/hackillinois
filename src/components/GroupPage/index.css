@@ -16,3 +16,9 @@
   padding-right: 15px;
   padding-bottom: 60px;
 }
+
+.forum .heading {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
