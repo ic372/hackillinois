@@ -7,7 +7,6 @@ import Dashboard from "../Dashboard";
 import Profile from "../Profile";
 import GroupPage from "../GroupPage";
 import Notes from "../Notes";
-import Notes2 from "../Notes2";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { CssBaseline, CircularProgress } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -51,7 +50,6 @@ export default function App() {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/group" component={GroupPage} />
           <Route exact path="/notes" component={Notes} />
-          <Route exact path="/notes2" component={Notes2} />
         </Switch>
       </Router>
     </MuiThemeProvider>

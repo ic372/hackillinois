@@ -4,55 +4,51 @@
   margin-bottom: 16px;
 }
 
-.todoListMain .header input {
-  padding: 10px;
+.todoListMain .header {
+  align-items: center;
+}
+
+.todoListMain .header .input {
+  padding: 10px 10px;
   font-size: 16px;
   border: 1px solid #000;
   border-radius: 10px;
   width: 90vw;
-  margin-left: 10px;
+  height: 8vh;
+  margin-left: 15px;
 }
 
-.todoListMain .header button {
-  padding: 10px;
+.submit-note {
+  float: right;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.note-content {
+  padding: 10px 5px;
   font-size: 16px;
-  margin: 10px;
-  margin-right: 0px;
-  background-color: #0066ff;
-  color: #fff;
-  border: 2px solid #0066ff;
+  border: 1px solid #000;
   border-radius: 10px;
+  width: 90vw;
+  margin-left: 15px;
 }
 
-.todoListMain .header button:hover {
-  background-color: #003399;
-  border: 2px solid #003399;
-  border-radius: 10px;
-  cursor: pointer;
+.note-content input {
+  padding-left: 5px;
+  word-wrap: normal;
 }
 
-.todoListMain .theList {
-  list-style: none;
-  padding-left: 0;
-  width: 100vw;
+.edit-button {
+  float: right;
+  margin-left: 5px;
 }
 
-.todoListMain .theList li {
-  color: #333;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-
-  transition: background-color 0.2s ease-out;
+.delete-button {
+  float: right;
+  margin-left: 5px;
 }
 
-.todoListMain .theList li:hover {
-  background-color: pink;
-
-  cursor: pointer;
-}
-
-ul.theList {
-  padding: 0;
+.done-button {
+  float: right;
+  margin-left: 5px;
 }
