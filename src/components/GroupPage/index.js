@@ -18,7 +18,7 @@ class GroupPage extends Component {
       <div className="forum">
         <NavBar />
         <div className="heading">
-          <h2>CS Theory</h2>
+          <h2>CS Theory Posts</h2>
         </div>
         <ThreadDisplay /**database={this.database}**/ />
       </div>

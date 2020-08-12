@@ -32,6 +32,7 @@ class Firebase {
     await this.auth.createUserWithEmailAndPassword(email, password);
     return this.auth.currentUser.updateProfile({
       displayName: name,
+      email: email,
     });
   }
 
@@ -43,6 +44,10 @@ class Firebase {
 
   getCurrentUsername() {
     return this.auth.currentUser && this.auth.currentUser.displayName;
+  }
+
+  getCurrentUserEmail() {
+    return this.auth.currentUser.email;
   }
 }
 

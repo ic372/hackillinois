@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, Typography } from "@material-ui/core";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-/**can add an icon for app in nav bar later */
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -15,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   main: {
     width: "auto",
     display: "block", // Fix IE 11 issue.
+    alignItems: "center",
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 class Dashboard extends Component {
   cardStyle = {
     display: "block",
-    width: "80vw",
+    width: "96vw",
     alignItems: "stretch",
   };
 
@@ -127,17 +127,19 @@ class Dashboard extends Component {
             Search
           </Button>
         </div>
-        <Grid
-          container
-          spacing={2}
-          direction="column"
-          alignItems="center"
-          justify="center"
-        >
-          {groupsList.group.map((group) => {
-            return this.renderGroup(group);
-          })}
-        </Grid>
+        <div className="groups">
+          <Grid
+            container
+            spacing={2}
+            direction="column"
+            alignItems="center"
+            justify="center"
+          >
+            {groupsList.group.map((group) => {
+              return this.renderGroup(group);
+            })}
+          </Grid>
+        </div>
       </main>
     );
   }

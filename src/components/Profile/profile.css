@@ -1,8 +1,12 @@
+.ProfilePage {
+  text-align: center;
+}
+
 .WelcomeMessage {
   text-align: center;
   margin-top: 10vh;
 }
 
-.GroupsJoined {
+.ContactInfo {
   text-align: center;
 }

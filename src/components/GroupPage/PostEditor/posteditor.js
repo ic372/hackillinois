@@ -34,9 +34,6 @@ class PostEditor extends Component {
   render() {
     return (
       <div className="postsPage">
-        <div className="heading">
-          <h2>Posts</h2>
-        </div>
         <div className="todoListMain">
           <div class="header">
             <textarea
@@ -61,7 +58,7 @@ class PostEditor extends Component {
                 this.state.noteEditing !== index ? (
                   <div className="note">
                     <div className="note-content">
-                      <input type="text" value={note} />
+                      <textarea className="input" type="text" value={note} />
                       <button
                         className="btn btn-info edit-button"
                         onClick={() => this.setNoteEditing(index)}
@@ -79,7 +76,8 @@ class PostEditor extends Component {
                 ) : (
                   <div className="note">
                     <div className="note-content">
-                      <input
+                      <textarea
+                        className="input"
                         type="text"
                         value={this.state.currentEdit}
                         onChange={(event) => this.editNote(event)}

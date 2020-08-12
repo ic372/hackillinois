@@ -1,6 +1,7 @@
 import React from "react";
 import firebase from "../Fire";
 import NavBar from "../NavBar";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import "./profile.css";
 
 const Profile = () => {
@@ -10,8 +11,9 @@ const Profile = () => {
       <div className="WelcomeMessage">
         <h2>Welcome {firebase.getCurrentUsername()}!</h2>
       </div>
-      <div className="GroupsJoined">
-        <h6>Groups you have joined: </h6>
+      <MailOutlineIcon />
+      <div className="ContactInfo">
+        <h6>Your email: {firebase.getCurrentUserEmail()}</h6>
       </div>
     </div>
   );
