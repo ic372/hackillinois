@@ -27,7 +27,7 @@ function NavBar(props) {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <Button onClick={toDash} color="inherit" style={{ fontSize: 15 }}>
+          <Button onClick={toDash} color="inherit" style={{ fontSize: 14 }}>
             Study Buddies
           </Button>
           <Button

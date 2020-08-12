@@ -65,7 +65,7 @@ class ToDoList2 extends Component {
                 this.state.noteEditing !== index ? (
                   <div className="note">
                     <div className="note-content">
-                      <input type="text" value={note} />
+                      <textarea className="input" type="text" value={note} />
                       <button
                         className="btn btn-info edit-button"
                         onClick={() => this.setNoteEditing(index)}
@@ -83,7 +83,8 @@ class ToDoList2 extends Component {
                 ) : (
                   <div className="note">
                     <div className="note-content">
-                      <input
+                      <textarea
+                        className="input"
                         type="text"
                         value={this.state.currentEdit}
                         onChange={(event) => this.editNote(event)}
