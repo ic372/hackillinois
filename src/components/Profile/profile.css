@@ -10,3 +10,14 @@
 .ContactInfo {
   text-align: center;
 }
+
+#delete-button {
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding: 1%;
+  font-weight: bold;
+}
+#delete-button:hover {
+background-color: rgb(187, 1, 32);
+}
